@@ -1,8 +1,25 @@
 package com.example.batchprocessing;
 
 public class Person {
+
     private String lastName;
-    private String fristName;
+    private String firstName;
+
+    public Person() {
+    }
+
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
 
     public String getLastName() {
         return lastName;
@@ -12,19 +29,9 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public String getFristName() {
-        return fristName;
-    }
-
-    public void setFristName(String fristName) {
-        this.fristName = fristName;
-    }
-
     @Override
     public String toString() {
-        return "PersonJAva{" +
-                "lastName='" + lastName + '\'' +
-                ", fristName='" + fristName + '\'' +
-                '}';
+        return "firstName: " + firstName + ", lastName: " + lastName;
     }
+
 }

@@ -1,12 +1,17 @@
 package com.example.batchprocessing;
 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 
 public class PersonItemProcessor implements ItemProcessor<Person, Person> {
-    LoggerFactory.getLogger(PersonItemProcessor.class);
+    private  static final Logger log = LoggerFactory.getLogger(PersonItemProcessor.class);
     @Override
     public Person process(Person person) throws Exception {
-        return null;
+        final String fristName = person.getFirstName().toUpperCase();
+        final String lastName = person.getLastName().toUpperCase();
+        final Person transformedPerson = new Person(fristName, lastName);
+        log.info("Converting ("+person+") into ("+transformedPerson+")");
+        return transformedPerson;
     }
 }
