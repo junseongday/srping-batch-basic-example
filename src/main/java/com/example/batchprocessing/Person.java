@@ -1,6 +1,6 @@
 package com.example.batchprocessing;
 
-public class PersonJAva {
+public class Person {
     private String lastName;
     private String fristName;
 
